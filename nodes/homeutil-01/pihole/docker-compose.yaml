@@ -1,0 +1,20 @@
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    dns:
+      - 127.0.0.1
+      - 8.8.8.8
+    environment:
+      TZ: 'America/New_York'
+      WEBPASSWORD: 'Squad-Lint-Undocked5-Geometric-Wolf'
+    volumes:
+      - './etc-pihole:/etc/pihole'
+      - './etc-dnsmasq.d:/etc/dnsmasq.d'
+      - './custom.list:/etc/pihole/custom.list'
+    ports:
+      # Binding to 0.0.0.0 ensures it listens on both .6.150 and .55.4
+      - "0.0.0.0:53:53/tcp"
+      - "0.0.0.0:53:53/udp"
+      - "0.0.0.0:8080:80/tcp" 
+    restart: unless-stopped

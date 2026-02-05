@@ -1,0 +1,11 @@
+# Ignore Docker runtime data directories
+**/etc-pihole/
+**/etc-dnsmasq.d/
+**/npm/data/
+**/npm/letsencrypt/
+**/pgdata/
+**/step-ca/step/
+
+# Ignore temporary system files
+.DS_Store
+*.log
