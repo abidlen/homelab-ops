@@ -5,7 +5,8 @@
 | :--- | :--- | :--- | :--- |
 | **Infrastructure** | | | |
 | p-control-01 | 192.168.55.15 | Windows Server (DNS/CA) | 🛑 Decommissioning |
-| u-util-01 | 192.168.55.3 | Ubuntu NUC (VCF Ops) | Active |
+| labutil-01 | 192.168.55.3 / 192.168.6.153 | Ubuntu NUC - Lab Apps | Active |
+| homeutil-01 | 192.168.55.4 / 192.168.6.154 | Ubuntu NUC - Home Apps | Active |
 | cm-jump-01 | 192.168.60.50 | Jump Host | Active |
 | **VCF Management** | | | |
 | p-vcsa-01 | 192.168.55.25 | vCenter Server Appliance | Active |
