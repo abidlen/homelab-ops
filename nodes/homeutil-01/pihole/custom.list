@@ -1,3 +1,5 @@
+192.168.55.3 labutil-01.example.net
+192.168.55.4 homeutil-01.example.net
 192.168.55.5 agb-pi02.ad.example.net
 192.168.55.41 cm-fleet-01.ad.example.net
 192.168.60.50 cm-jump-01.ad.example.net
@@ -18,4 +20,3 @@
 192.168.55.42 u-hst-01.ad.example.net
 192.168.55.37 u-packer-01.ad.example.net
 192.168.55.43 u-sddcmanager-01.ad.example.net
-192.168.55.3 u-util-01.ad.example.net
