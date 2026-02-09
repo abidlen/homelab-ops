@@ -8,6 +8,7 @@ services:
     environment:
       TZ: 'America/New_York'
       WEBPASSWORD: 'Squad-Lint-Undocked5-Geometric-Wolf'
+      FTLCONF_misc_etc_dnsmasq_d: 'true'
     volumes:
       - './etc-pihole:/etc/pihole'
       - './etc-dnsmasq.d:/etc/dnsmasq.d'
@@ -18,3 +19,4 @@ services:
       - "0.0.0.0:53:53/udp"
       - "0.0.0.0:8080:80/tcp" 
     restart: unless-stopped
+
