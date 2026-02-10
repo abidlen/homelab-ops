@@ -12,7 +12,6 @@ services:
     volumes:
       - './etc-pihole:/etc/pihole'
       - './etc-dnsmasq.d:/etc/dnsmasq.d'
-      - './custom.list:/etc/pihole/custom.list'
     ports:
       # Binding to 0.0.0.0 ensures it listens on both .6.150 and .55.4
       - "0.0.0.0:53:53/tcp"
