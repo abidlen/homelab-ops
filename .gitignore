@@ -1,6 +1,5 @@
 # Ignore Docker runtime data directories
 **/etc-pihole/
-**/etc-dnsmasq.d/
 **/npm/data/
 **/npm/letsencrypt/
 **/pgdata/
