@@ -9,13 +9,12 @@ services:
       - "8080:80/tcp" # Web Interface on Port 8080
     environment:
       - TZ=America/New_York
-      - WEBPASSWORD=admin # Change this immediately after boot!
+      - WEBPASSWORD=Squad-Lint-Undocked5-Geometric-Wolf
       - FTLCONF_misc_etc_dnsmasq_d=true
     volumes:
       - ./etc-pihole:/etc/pihole
       # Use FULL PATHS to guarantee the mount works
       - /home/labadmin/homelab-ops/nodes/homeutil-01/pihole/etc-dnsmasq.d:/etc/dnsmasq.d
-      - /home/labadmin/homelab-ops/nodes/homeutil-01/pihole/custom.list:/etc/pihole/custom.list
     dns:
       - 127.0.0.1
       - 1.1.1.1 # Upstream for the container itself
