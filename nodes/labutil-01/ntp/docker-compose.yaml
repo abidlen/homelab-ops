@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  ntp:
+    image: cturra/ntp
+    container_name: ntp
+    restart: unless-stopped
+    ports:
+      - "123:123/udp"
+    environment:
+      # Use fast, reliable upstreams (Cloudflare & Google)
+      - NTP_SERVERS=time.cloudflare.com,time.google.com
+      - LOG_LEVEL=0
+    cap_add:
+      # Critical: Allows the container to manipulate the clock if needed
+      # and handle high-precision timing.
+      - SYS_TIME
+    read_only: true
+    tmpfs:
+      - /etc/chrony.d
+      - /run
+      - /var/lib/chrony
