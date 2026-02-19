@@ -18,3 +18,4 @@ services:
       - /etc/chrony.d
       - /run
       - /var/lib/chrony
+      - /etc/chrony
