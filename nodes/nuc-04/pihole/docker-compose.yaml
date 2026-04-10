@@ -1,0 +1,20 @@
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    restart: unless-stopped
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "8080:80/tcp"
+    environment:
+      - TZ=America/New_York
+      - WEBPASSWORD=Squad-Lint-Undocked5-Geometric-Wolf
+      - FTLCONF_misc_etc_dnsmasq_d=true
+    volumes:
+      - ./etc-pihole:/etc/pihole
+      - /home/labadmin/homelab-ops/common/pihole:/etc/dnsmasq.d:ro
+    dns:
+      - 127.0.0.1
+      - 1.1.1.1    
+
