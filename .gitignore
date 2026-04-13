@@ -1,10 +1,11 @@
-# Ignore Docker runtime data directories
-**/etc-pihole/
-**/npm/data/
-**/npm/letsencrypt/
-**/pgdata/
-**/step-ca/step/
+# Pi-hole runtime data
+nodes/*/pihole/etc-pihole/pihole-FTL.db*
+nodes/*/pihole/etc-pihole/gravity.db*
+nodes/*/pihole/etc-pihole/gravity_old.db
+nodes/*/pihole/etc-pihole/dhcp.leases
+nodes/*/pihole/etc-pihole/listsCache/
+nodes/*/pihole/etc-pihole/config_backups/
 
-# Ignore temporary system files
-.DS_Store
+# General
 *.log
+.DS_Store
