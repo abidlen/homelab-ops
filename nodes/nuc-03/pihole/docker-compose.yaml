@@ -11,9 +11,11 @@ services:
       - TZ=America/New_York
       - WEBPASSWORD=Squad-Lint-Undocked5-Geometric-Wolf
       - FTLCONF_misc_etc_dnsmasq_d=true
-    volumes:
-      - ./etc-pihole:/etc/pihole
-      # Use FULL PATHS to guarantee the mount works
+    volumes:  
+      # 1. Stateful data moves to the local NVMe storage (outside Git)
+      - /mnt/storage/apps/pihole/etc-pihole:/etc/pihole
+      
+      # 2. Shared info between nodes
       - /home/labadmin/homelab-ops/common/pihole:/etc/dnsmasq.d:ro
     dns:
       - 127.0.0.1
