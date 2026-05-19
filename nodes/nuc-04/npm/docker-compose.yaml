@@ -1,7 +1,6 @@
 services:
-  app:
+  npm:
     image: 'jc21/nginx-proxy-manager:latest'
-    container_name: npm
     restart: unless-stopped
     ports:
       - '80:80'   # Public HTTP
@@ -10,3 +9,10 @@ services:
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
+
+  nginx-depot:
+    image: nginx:alpine
+    volumes:
+      - ./nginx-depot.conf:/etc/nginx/nginx.conf:ro
+      - /mnt/storage/depot:/data/depot:ro 
+    restart: unless-stopped
