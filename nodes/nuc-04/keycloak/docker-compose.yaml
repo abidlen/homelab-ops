@@ -8,11 +8,11 @@ services:
     environment:
       # Administrative Bootstrapping (Uncomment on first boot, then re-comment)
       - KC_BOOTSTRAP_ADMIN_USERNAME=admin
-      - KC_BOOTSTRAP_ADMIN_PASSWORD=VMware1!Admin
+      - KC_BOOTSTRAP_ADMIN_PASSWORD=VMware123!VMware123!
       
       # Proxy & Hostname Configuration (Keycloak 26+ Standard)
       - KC_HOSTNAME=keycloak.example.net
-      - KC_PROXY_HEADERS=x-forwarded
+      - KC_PROXY_HEADERS=xforwarded
       - KC_HTTP_ENABLED=true
       - KC_STRICT_HTTPS=true
       
