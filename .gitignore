@@ -13,6 +13,9 @@ nodes/nuc-04/keycloak/data/
 # Chrony (Only runs on nuc-03)
 nodes/nuc-03/chrony/var/lib/chrony/
 
+# Pi-hole Legacy Fallback (Catch-all for internal node folders)
+nodes/*/pihole/etc-pihole/
+
 # ==========================================
 # 2. General Global Ignores
 # ==========================================
