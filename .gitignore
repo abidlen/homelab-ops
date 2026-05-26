@@ -1,11 +1,20 @@
-# Pi-hole runtime data
-nodes/*/pihole/etc-pihole/pihole-FTL.db*
-nodes/*/pihole/etc-pihole/gravity.db*
-nodes/*/pihole/etc-pihole/gravity_old.db
-nodes/*/pihole/etc-pihole/dhcp.leases
-nodes/*/pihole/etc-pihole/listsCache/
-nodes/*/pihole/etc-pihole/config_backups/
+# ==========================================
+# 1. Node-Specific Runtime/Working Data
+# ==========================================
 
-# General
+# Nginx Proxy Manager (Only runs on nuc-04)
+# Ignores live sqlite dbs, logs, and generated proxy config files
+nodes/nuc-04/npm/data/
+nodes/nuc-04/npm/letsencrypt/
+
+# Keycloak (Only runs on nuc-04)
+nodes/nuc-04/keycloak/data/
+
+# Chrony (Only runs on nuc-03)
+nodes/nuc-03/chrony/var/lib/chrony/
+
+# ==========================================
+# 2. General Global Ignores
+# ==========================================
 *.log
 .DS_Store
