@@ -9,7 +9,7 @@ services:
       - "8080:80/tcp" # Web Interface on Port 8080
     environment:
       - TZ=America/New_York
-      - WEBPASSWORD=Squad-Lint-Undocked5-Geometric-Wolf
+      - WEBPASSWORD=VMware123!
       - FTLCONF_misc_etc_dnsmasq_d=true
     volumes:  
       # 1. Stateful data moves to the local NVMe storage (outside Git)
