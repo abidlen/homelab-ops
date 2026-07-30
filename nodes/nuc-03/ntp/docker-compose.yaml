@@ -1,6 +1,6 @@
 services:
   ntp:
-    image: cturra/ntp
+    image: cturra/ntp:latest
     container_name: ntp
     restart: unless-stopped
     ports:
@@ -9,13 +9,16 @@ services:
       # Use fast, reliable upstreams (Cloudflare & Google)
       - NTP_SERVERS=time.cloudflare.com,time.google.com
       - LOG_LEVEL=0
+    # Optional: set your timezone (affects log timestamps)
+      - TZ=America/New_York
+      # Optional: enable@ Network Time Security (NTS)
+      # - ENABLE_NTS=trueap_add:
+    # Critical: Allows the container to manipulate the clock if needed
+    # and handle high-precision timing.
     cap_add:
-      # Critical: Allows the container to manipulate the clock if needed
-      # and handle high-precision timing.
       - SYS_TIME
     read_only: true
     tmpfs:
-      - /etc/chrony.d
-      - /run
-      - /var/lib/chrony
-      - /etc/chrony
+      - /etc/chrony:rw,mode=1750
+      - /run/chrony:rw,mode=1750
+      - /var/lib/chrony:rw,mode=1750
