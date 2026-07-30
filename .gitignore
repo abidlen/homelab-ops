@@ -10,14 +10,27 @@ nodes/nuc-04/npm/letsencrypt/
 # Keycloak (Only runs on nuc-04)
 nodes/nuc-04/keycloak/data/
 
-# Chrony (Only runs on nuc-03)
-nodes/nuc-03/chrony/var/lib/chrony/
-
-# Pi-hole Legacy Fallback (Catch-all for internal node folders)
+# Pi-hole (nuc-03 and nuc-04) - runtime data belongs on NVMe
 nodes/*/pihole/etc-pihole/
 
+# Chrony (Only runs on nuc-03)
+nodes/nuc-03/chrony
+nodes/*/ntp/data
+
 # ==========================================
-# 2. General Global Ignores
+# 2. Secrets & Environment Files
+# ==========================================
+.env
+*.env
+!.env.example
+
+# ==========================================
+# 3. General Ignores
 # ==========================================
 *.log
+*.tmp
+*~
 .DS_Store
+.vscode/
+.idea/
+
